@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace ManiWebApp.Models
 {
@@ -6,10 +7,12 @@ namespace ManiWebApp.Models
     {
         [Required(ErrorMessage = "Employee Name Mandatory")]
         [StringLength(maximumLength:50, ErrorMessage ="Max Length 50")]
+        [DisplayName("Employee Name")]
         public string EmployeeName { get; set; }
 
         [Required(ErrorMessage = "DOB Mandatory")]
         [DataType(DataType.Date)]
+        [DisplayName("Date Of Birth")]
         public DateTime DateOfBirth { get; set; }
 
         [Required(ErrorMessage = "Address mandatory")]
